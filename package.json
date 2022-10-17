@@ -1,0 +1,42 @@
+{
+  "name": "nodejs-challenge",
+  "version": "1.0.0",
+  "description": "Challenge",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc src/index.ts",
+    "test": "npm run mongodb:start && jest --coverage false ./src --runInBand",
+    "mongodb:start": "docker-compose up -d",
+    "mongodb:stop": "docker-compose down",
+    "seed": "npm run mongodb:start && ts-node ./src/seeder/index.ts --import"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^26.0.23",
+    "@types/node": "^15.12.2",
+    "jest": "^27.0.4",
+    "ts-jest": "^27.0.3",
+    "ts-node": "^10.0.0",
+    "@types/mongoose": "^5.7.27",
+    "mongodb-memory-server": "^7.2.1",
+    "typescript": "^4.3.2"
+  },
+  "dependencies": {
+    "@supercharge/promise-pool": "^2.3.2",
+    "axios": "^1.1.2",
+    "colors": "^1.4.0",
+    "convert-excel-to-json": "^1.7.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jest-watch-typeahead": "^0.4.2",
+    "lodash": "^4.17.21",
+    "mongoose": "^5.13.3",
+    "nodemon": "^2.0.20",
+    "slugify": "^1.6.5",
+    "xls-to-json": "^2.1.1"
+  }
+}
