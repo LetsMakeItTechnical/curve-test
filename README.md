@@ -27,5 +27,3 @@ ts-node ./src/seeder/index.ts --import
 ```bash
 npm run test
 ```
-
-# curve-test
